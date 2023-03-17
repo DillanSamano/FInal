@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='register_style.css') }}" >
+    <title>Document</title>
+</head>
+<body>
+    <div class="title" style="display: grid; place-items: center; font-size: larger;">
+
+    <h1 id="register">Welcome Back {{user.username}}</h1>
+</div>
+            <div style= "display: grid; place-items: center;color: red;">
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        </div>
+    <div id="con" style="display: grid; place-items: center;" >
+        
+        <button class="sel">  
+        <a href="/Character_menu" class="at">START A  NEW STORY</a>
+        </button>
+        <br>
+        <button class="sel">  
+            <a href="" class="at">CONTINUNE > </a>
+            </button>
+        <br>
+        <button class="sel">  
+            <a href="" class="at">INVENTORY</a>
+            </button>
+        <br>
+        <button class="sel">  
+            <a href="/clear_session" class="at">LOG OUT</a>
+            </button>
+        <br>
+    </div>
+<br>
+    </form>
+</body>
+</html>

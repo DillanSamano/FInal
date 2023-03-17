@@ -1,0 +1,73 @@
+@font-face{
+    font-family: 'myfont';
+    src:url(fonts/AncientModernTales.ttf);
+}
+
+@font-face{
+    font-family: 'cpu';
+    src:url(fonts/DiaryOfAn8BitMage-lYDD.ttf);
+}
+
+#login{
+    font-size: 80px;
+    color: green;
+    font-family: 'myfont';
+}
+
+body{
+    background-color: black;
+}
+
+.log_style{
+    width: 400px;
+    height: 300px;
+    border: solid;
+    border-color: black;
+    border-width: 2px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#log{
+    position: relative;
+    bottom: 100px;
+}
+
+
+.txt{
+    font-size: x-large;
+    font-family: 'myfont';
+    color: green;
+}
+
+.iput{
+    font-family: 'cpu';
+    color: green;
+    border-color: green;
+    background-color: black;
+}
+
+
+input:focus{
+    outline: 2px solid green;     
+}
+
+.log_buttn{
+    position: relative;
+    bottom:200px;
+    color: black;
+}
+
+#but{
+    background-color: black;
+    border-color: green;
+    color: green;
+}
+
+#p{
+    color: green;
+}
+
+#reg{
+    color: green;
+}

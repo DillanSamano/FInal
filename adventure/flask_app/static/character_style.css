@@ -1,0 +1,100 @@
+@font-face{
+    font-family: 'myfont';
+    src:url(fonts/AncientModernTales.ttf);
+}
+
+@font-face{
+    font-family: 'cpu';
+    src:url(fonts/DiaryOfAn8BitMage-lYDD.ttf);
+}
+
+
+
+
+body{
+    background-color: black;
+}
+
+.characters{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 30px;
+}
+
+
+#top{
+    display:inline-flex;
+    justify-content: center;
+    margin:0 auto;
+    width: 450px;
+    height: 450px;
+    border: solid;
+    border-color: green;
+    border-width: 4px;
+}
+
+#bottom{
+
+    display:inline-flex;
+    justify-content: center;
+    margin:0 auto;
+    width: 450px;
+    height: 450px;
+    border: solid;
+    border-color: green;
+    border-width: 4px;
+}
+
+
+.card{
+    display: grid;
+    
+}
+
+
+
+.name{
+    letter-spacing: 2px;
+    text-decoration: underline;
+    color:green;
+    font-family: 'cpu';
+}
+
+.chara_img{
+    height: 100px;
+}
+
+.desc{
+    width: 200px;
+    word-spacing: 5px;
+    word-wrap: break-word;
+    font-family: 'cpu';
+    color: green;
+}
+
+
+.list{
+    font-family: 'cpu';
+    color: green;
+}
+
+.SeLect{
+    font-family: 'cpu';
+    color: green;
+    font-size:x-large;
+    background-color: black;
+    border-color: green;
+}
+
+.bt{
+    size-adjust: 20px;
+    background-color: black;
+    border-color: green;
+    width: 100px;
+    height: 30px;
+}
+
+.d{
+    
+}

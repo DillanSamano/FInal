@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='character_style.css') }}" >
+    <title>Document</title>
+</head>
+<body>
+    <container class="characters">
+
+<!-- WIZARD CARD -->
+        <div id="top">
+            <div class="card">
+                <h1 class="name">Wizard</h1>
+                <img src="" alt="" class="chara_img">
+                <p class="desc">Wizard, comes with a wand and extemely cool hat</p>
+                    <form action="/create_adventure" method="post">
+                    <input type="hidden" name="character" value="wizard">
+                    <input type="hidden" name="page" value="1">
+                    <input type="hidden" name="inventory" value = "0">
+                    <input type="hidden" name="health" value="100">
+                    <div class="bt">
+                    <button class="SeLect"> Select</button>
+                </div>
+            </form>
+            </div>
+        </div>
+<!-- END OF CARD -->
+
+<!-- SWOARDMAN -->
+        <div id="top">
+            <div class="card">
+                <h1 class="name">Swordman</h1>
+                <img src="" alt="" class="chara_img">
+                <p class="desc">Swordmen a noble hero, equiped with awesome hair and a long sword </p>
+                <button class="bt">
+                    <a href="/home#game" class="SeLect">
+                        <input type="hidden" name="health" >Select</a>
+                    </button>
+            </div>
+        </div>
+<!-- END OF THE CARD -->
+
+<!-- CLERIC -->
+        <div id="top">
+            <div class="card">
+                <h1 class="name">Cleric</h1>
+                <img src="" alt="" class="chara_img">
+                <p class="desc">A Reglious leader,capable in combat and skilled in the use of divine magic.  </p>
+                <button class="bt">
+                    <a href="/home#game" class="SeLect">
+                        <input type="hidden" name="health" >Select</a>
+                    </button>
+            </div>
+        </div>
+<!-- END OF CARD -->
+
+<!-- THEIF CARD -->
+        <div id="bottom">
+            <div class="card">
+                <h1 class="name">Thief</h1>
+                <img src="" alt="" class="chara_img">
+                <p class="desc">This is a example, sneaky combat and the skill of stealth </p>
+                <button class="bt">
+                    <a href="/home#game" class="SeLect">
+                        <input type="hidden" name="health" >Select</a>
+                    </button>
+            </div>
+        </div>
+<!-- END OF CARD -->
+
+<!-- ARCHERED CARD -->
+        <div id="bottom">
+            <div class="card">
+                <h1 class="name">Archered</h1>
+                <img src="" alt="" class="chara_img">
+                <p class="desc">Archers are masters of ranged combat, perfered to take down target from afar </p>
+                <button class="bt">
+                    <a href="/home#game" class="SeLect">
+                        <input type="hidden" name="health" >Select</a>
+                    </button>
+            </div>
+        </div>
+<!-- END OF  CARD -->
+    </container>
+</body>
+</html>

@@ -1,0 +1,135 @@
+
+@font-face{
+    font-family: 'myfont';
+    src:url(fonts/AncientModernTales.ttf);
+}
+
+@font-face{
+    font-family: 'cpu';
+    src:url(fonts/DiaryOfAn8BitMage-lYDD.ttf);
+}
+
+
+
+h1{
+    color: green;
+    font-family: 'myfont';
+    font-size: 100px;
+    letter-spacing: 1px;
+}
+
+body{
+    background-color: black;
+    height: 1500px;
+}
+
+#out {
+    display:block;
+    width: 500px;
+    height: 250px;
+    margin: 0 auto;
+
+}
+
+#game{
+    width: 1200px;
+    height: 945px;
+    border: solid;
+    border-color: green;
+    border-width: 10px;
+    margin: 20px auto;
+    position: relative;
+    
+}
+
+#table1{
+    display: block;
+    position: relative;
+}
+
+#logout{
+    font-family: 'myfont';
+    font-size: x-large;
+    color: green;
+    position: absolute;
+    top: 0;
+    right: 40px;
+}
+
+
+.bottom{
+    position: absolute;
+    bottom: 300px;
+    width: 1200px;
+    border-top: 1px solid green;
+}
+
+
+#dio{
+    left: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+#dialogue{
+    font-family: 'cpu';
+    color: green;
+    letter-spacing: 1px;
+    border-right: 5px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+        typing 2s steps(45),
+        cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor{
+    50% { border-color: transparent }
+}
+
+@keyframes typing {
+    from {width: 0}
+}
+
+
+
+#text{
+    font-family: 'cpu';
+    left: 10px;
+    height: 20px;
+    width: 400px;
+    position: absolute;
+    top: 250px;
+    border-color: green;
+    background-color: black;
+    color: green;
+}
+
+#invo{
+    right: 20px;
+    top: 250px;
+    position: absolute;
+    font-family: 'cpu';
+    color: green;
+}
+
+input[type="text"]:focus{
+    outline: 2px solid green;     
+}
+
+#img{
+    height: 5px;
+    position: relative;
+    left: 460px;
+    top: 200px;
+}
+
+.option{
+    padding: 20px;
+    position: relative;
+    left: 400px;
+    top: 150px;
+    color: green;
+    font-family: 'cpu';
+}
