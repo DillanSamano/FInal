@@ -1,6 +1,6 @@
 from flask import render_template,redirect,request,flash,session
 from flask_app.models.user_model import User
-
+from flask_app.models.adventure_model import Adventure
 
 from flask_app import app
 from flask_bcrypt import Bcrypt
@@ -79,11 +79,22 @@ def clear():
 
 @app.route("/home")
 def home():
+    Adventure.health(
+        {
+        'id' : (session['user_id'])
+        }
+    )
     if 'user_id' not in session:
         return redirect("/")
-    return render_template("1.html",user=User.get_user_by_id(session['user_id']))
+    return render_template("1.html",user=User.get_user_by_id(session['user_id']), health=Adventure.health(
+        {
+        'id' : (session['user_id'])
+        }
+    )
+    )
 
 @app.route("/Run")
 def run():
     render_template("/Run.html")
+
 

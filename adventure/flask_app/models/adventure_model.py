@@ -11,7 +11,7 @@ class Adventure :
     def __init__(self,data):
         self.page = data['page']
         self.health = data['health']
-        self.character = data['character']
+        self.character_name = data['character_name']
         self.inventory = data['inventory']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
@@ -25,22 +25,19 @@ class Adventure :
 
 
 
+    @classmethod
+    def save(cls,data):
+        query = 'INSERT INTO adventure (page,health,inventory,user_id) VALUES (%(page)s,%(health)s,%(inventory)s, %(id)s)'
+        return connectToMySQL(db).query_db(query,data)
 
 
+    @classmethod
+    def health(cls,data):
+        query = "SELECT health FROM users JOIN adventure ON adventure.user_id = users.id where user_id  = %(id)s"
+        results = connectToMySQL(db).query_db(query,data)
+        print(results)
 
-
-
-    @staticmethod
-    def adventure_validator(adventure):
-        is_valid = True 
-        if len(adventure['first_name']) < 6:
-            flash("your name is not long enough!")
-            is_valid = False
-
-
-        return is_valid
-
-
+    
 
 
 

@@ -21,6 +21,8 @@ class User:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.adventure = []
+        self.adve=[]
+
 
 
 
@@ -62,6 +64,15 @@ class User:
             return False
         return cls(results[0])
 
+
+
+
+
+
+
+    # def reduce_health(self):
+    #         self.health = self.health - 10
+    #         if self.health <= 0 :
 
 
 

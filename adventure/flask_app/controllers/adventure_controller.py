@@ -30,3 +30,5 @@ def create_Character():
 @app.route("/continue")
 def continue_adventure():
     return redirect("home")
+
+
