@@ -36,7 +36,21 @@ class Adventure :
         query = "SELECT health FROM users JOIN adventure ON adventure.user_id = users.id where user_id  = %(id)s"
         results = connectToMySQL(db).query_db(query,data)
         print(results)
+        if len(results) == 100:
+            return print("FULL HEALTH")
+        elif len(results) <= 90:
+            return print("GAME OVER")
 
+    @classmethod
+    def hurt(cls,data):
+        query = "SELECT health FROM users JOIN adventure ON adventure.user_id = users.id where user_id  = %(id)s"
+        results = connectToMySQL(db).query_db(query,data)
+        len(results) + 10
+        print(results)
+
+
+    
+# class hurt:
     
 
 
