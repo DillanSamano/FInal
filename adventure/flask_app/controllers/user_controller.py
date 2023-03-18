@@ -86,7 +86,7 @@ def home():
     )
     if 'user_id' not in session:
         return redirect("/")
-    return render_template("1.html",user=User.get_user_by_id(session['user_id']), health=Adventure.health(
+    return render_template("1.html",user=User.get_user_by_id(session['user_id']), hurt=Adventure.hurt, health=Adventure.health(
         {
         'id' : (session['user_id'])
         }
