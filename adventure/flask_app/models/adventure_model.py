@@ -36,15 +36,10 @@ class Adventure :
         query = "SELECT health FROM users JOIN adventure ON adventure.user_id = users.id where user_id  = %(id)s"
         results = connectToMySQL(db).query_db(query,data)
         print(results)
-        # if len(results) > :
-        #     return print("FULL HEALTH")
-        # elif len(results) < Adventure.health():
-        #     return print("GAME OVER")
 
-    @staticmethod
-    def hurt(health):sdas
-        if health > 90:
-            return print("full health")
+
+def damage(self,health):
+    self.health=health  
 
 
 
