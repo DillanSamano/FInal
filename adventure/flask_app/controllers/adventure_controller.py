@@ -1,5 +1,6 @@
 from flask import render_template,redirect,request,flash ,session
 from flask_app.models.user_model import User
+from flask_app.controllers.user_controller import User
 from flask_app.models.adventure_model import Adventure
 from flask_app import app
 
@@ -7,7 +8,7 @@ from flask_app import app
 @app.route("/Character_menu")
 def character_menu():
     if 'user_id' not in session:
-        return redirect("/")
+            return redirect("/")
     return render_template("character.html")
 
 
@@ -21,6 +22,8 @@ def create_Character():
         'character' : request.form['character'],
         'health' : request.form['health'],
         'inventory' : request.form['inventory'],
+        'health':session['health'],
+        'page':session['page'],
         'id': session['user_id']
     }
     Adventure.create_adventure(data)
@@ -29,6 +32,6 @@ def create_Character():
 
 @app.route("/continue")
 def continue_adventure():
-    return redirect("home")
+    return redirect("/home")
 
 

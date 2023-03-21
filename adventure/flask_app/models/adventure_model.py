@@ -1,9 +1,9 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app.models import user_model
+from flask_app.controllers.user_controller import User
 from flask import flash
 import pprint
 import re
-import os
 
 db = "user_n_adventure"
 
@@ -36,16 +36,6 @@ class Adventure :
         query = "SELECT health FROM users JOIN adventure ON adventure.user_id = users.id where user_id  = %(id)s"
         results = connectToMySQL(db).query_db(query,data)
         print(results)
-
-
-def damage(self,health):
-    self.health=health  
-
-
-
-    
-# class hurt:
-    
 
 
 

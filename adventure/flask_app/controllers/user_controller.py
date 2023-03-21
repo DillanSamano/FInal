@@ -93,21 +93,14 @@ def home():
     )
     )
 
-@app.route("/Run")
+@app.route("/run")
 def run():
-    render_template("/Run.html")
+
+        render_template("/Run.html")
 
 
-@app.route("/fight")
+@app.route("/fight", methods=['POST'])
 def fight():
-    Adventure.health(
-        {
-        'id' : (session['user_id'])
-        }
-    )
-    
-    return render_template("2.html", health = Adventure.health(
-        {
-        'id' : (session['user_id'])
-        }
-    ))
+        # session['health'] = request.form['health']
+        # session['page'] = request.form['page']
+        return render_template("2.html", user=User.get_user_by_id(session['user_id']))

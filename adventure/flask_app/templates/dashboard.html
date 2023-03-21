@@ -10,7 +10,7 @@
 <body>
     <div class="title" style="display: grid; place-items: center; font-size: larger;">
 
-    <h1 id="register">Welcome Back {{user.username}}</h1>
+    <h1 id="register">Welcome {{user.username}}</h1>
 </div>
             <div style= "display: grid; place-items: center;color: red;">
             {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
@@ -28,7 +28,7 @@
         </button>
         <br>
         <button class="sel">  
-            <a href="" class="at">CONTINUNE > </a>
+            <a href="/continue" class="at">CONTINUNE > </a>
             </button>
         <br>
         <button class="sel">  
