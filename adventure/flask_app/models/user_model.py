@@ -1,5 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-# from flask_app.models.painting_model import Paint
+from flask_app.models.adventure_model import Adventure
 import pprint
 from flask import flash
 import re 
@@ -21,11 +21,29 @@ class User:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.adventure = []
-        self.adve=[]
+        self.ad=[]
 
 
+    @classmethod
+    def get_single_adventure(cls,data):
+        query = "SELECT * FROM adventure left join users ON adventure.user_id = users.id where user_id=  %(id)s"
+        results = connectToMySQL(db).query_db(query,data)
+        pprint.pprint(results, sort_dicts=False)
+        user = cls(results[0])
+        for ad in results: 
+            ad_dictionary = {
+                'id': ad['id'],
+                'page' : ad['page'],
+                'health' : ad['health'],
+                'character_name' : ad['character_name'],
+                'inventory' : ad['inventory'],
+                'created_at' : ad['created_at'],
+                'updated_at' : ad['updated_at']
 
-
+            }
+            user.ad.append(Adventure(ad_dictionary))
+        return user
+    
 
 
     @classmethod

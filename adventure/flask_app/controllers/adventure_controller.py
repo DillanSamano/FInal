@@ -1,6 +1,6 @@
 from flask import render_template,redirect,request,flash ,session
 from flask_app.models.user_model import User
-from flask_app.controllers.user_controller import User
+# from flask_app.controllers.user_controller import User
 from flask_app.models.adventure_model import Adventure
 from flask_app import app
 
@@ -19,11 +19,12 @@ def create_Character():
         return redirect("/")
     data = {
         'page' : request.form['page'],
+        'health' : session['health'],
         'character' : request.form['character'],
-        'health' : request.form['health'],
         'inventory' : request.form['inventory'],
-        'id': session['user_id']
+        'id': session['user_id'],
     }
+    
     Adventure.create_adventure(data)
     return redirect("/home")
 

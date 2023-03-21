@@ -77,6 +77,16 @@ def clear():
     session.clear()
     return redirect("/")
 
+
+@app.route('/Game_over')
+def game_over():
+    return render_template("game_over.html", user=User.get_user_by_id(session['user_id']))
+
+
+
+
+
+
 @app.route("/home")
 def home():
     Adventure.health(
@@ -95,10 +105,33 @@ def home():
 
 @app.route("/run")
 def run():
+    User.get_single_adventure(
+        {
+        'id' : (session['user_id'])
+        }
+    )
+    return render_template("3.html", user=User.get_user_by_id(session['user_id']), adventure=User.get_single_adventure(
+        {
+        'id' : (session['user_id'])
+        }
+    ))
 
-        render_template("/Run.html")
 
 
-@app.route("/fight", methods=['POST'])
+@app.route("/fight")
 def fight():
-        return render_template("2.html", user=User.get_user_by_id(session['user_id']))
+    User.get_single_adventure(
+        {
+        'id' : (session['user_id'])
+        }
+    )
+    session['health'] -= 100
+    if session['health'] > 10:
+        print("nice")
+    elif session['health'] < 10 :
+        return redirect('/Game_over')
+    return render_template("2.html", user=User.get_user_by_id(session['user_id']), adventure=User.get_single_adventure(
+        {
+        'id' : (session['user_id'])
+        }
+    ))

@@ -133,3 +133,12 @@ input[type="text"]:focus{
     color: green;
     font-family: 'cpu';
 }
+
+#health{
+    letter-spacing: 1px;
+    left: 20px;
+    top: 225px;
+    position: absolute;
+    font-family: 'cpu';
+    color: green;
+}
