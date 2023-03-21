@@ -22,8 +22,6 @@ def create_Character():
         'character' : request.form['character'],
         'health' : request.form['health'],
         'inventory' : request.form['inventory'],
-        'health':session['health'],
-        'page':session['page'],
         'id': session['user_id']
     }
     Adventure.create_adventure(data)

@@ -101,6 +101,4 @@ def run():
 
 @app.route("/fight", methods=['POST'])
 def fight():
-        # session['health'] = request.form['health']
-        # session['page'] = request.form['page']
         return render_template("2.html", user=User.get_user_by_id(session['user_id']))
