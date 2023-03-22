@@ -125,7 +125,7 @@ def fight():
         'id' : (session['user_id'])
         }
     )
-    session['health'] -= 100
+    session['health'] -= 10
     if session['health'] > 10:
         print("nice")
     elif session['health'] < 10 :
