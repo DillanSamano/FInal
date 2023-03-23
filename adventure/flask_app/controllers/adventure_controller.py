@@ -19,12 +19,11 @@ def create_Character():
         return redirect("/")
     data = {
         'page' : request.form['page'],
-        'health': session['health'],
         'character' : request.form['character'],
         'inventory' : request.form['inventory'],
         'id': session['user_id'],
     }
-    
+    session['health'] = int(request.form['health'])
     Adventure.create_adventure(data)
     return redirect("/home")
 

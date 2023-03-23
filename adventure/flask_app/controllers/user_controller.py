@@ -89,49 +89,25 @@ def game_over():
 
 @app.route("/home")
 def home():
-    Adventure.health(
-        {
-        'id' : (session['user_id'])
-        }
-    )
+    # if 'health' not in session:
+    #     session['health'] = 100
     if 'user_id' not in session:
         return redirect("/")
-    return render_template("1.html",user=User.get_user_by_id(session['user_id']), health=Adventure.health(
-        {
-        'id' : (session['user_id'])
-        }
-    )
-    )
+    return render_template("1.html",user=User.get_user_by_id(session['user_id']),)
 
 @app.route("/run")
 def run():
-    User.get_single_adventure(
-        {
-        'id' : (session['user_id'])
-        }
-    )
-    return render_template("3.html", user=User.get_user_by_id(session['user_id']), adventure=User.get_single_adventure(
-        {
-        'id' : (session['user_id'])
-        }
-    ))
+    return render_template("3.html", user=User.get_user_by_id(session['user_id']))
 
-
+@app.route("/town")
+def town():
+    return render_template('4.html',user=User.get_user_by_id(session['user_id']))
 
 @app.route("/fight")
 def fight():
-    User.get_single_adventure(
-        {
-        'id' : (session['user_id'])
-        }
-    )
     session['health'] -= 10
     if session['health'] > 10:
-        print("nice")
+        True
     elif session['health'] < 10 :
         return redirect('/Game_over')
-    return render_template("2.html", user=User.get_user_by_id(session['user_id']), adventure=User.get_single_adventure(
-        {
-        'id' : (session['user_id'])
-        }
-    ))
+    return render_template("2.html", user=User.get_user_by_id(session['user_id']))
