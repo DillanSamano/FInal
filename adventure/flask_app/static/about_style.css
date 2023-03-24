@@ -32,6 +32,7 @@ h1{
 }
 
 .sideTab{
+    padding: 10px;
     float: right;
     border: solid;
     border-color: green;
