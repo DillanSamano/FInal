@@ -30,8 +30,8 @@ body{
 .title{
     background-image:url("img/dragonsprite.png");
     background-repeat: no-repeat;
-    background-size:300px;
-    background-position: right ;
+    background-size:200px;
+    background-position: 1155px 10px ;
 }
 
 #con{

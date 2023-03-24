@@ -8,16 +8,41 @@
     src:url(fonts/DiaryOfAn8BitMage-lYDD.ttf);
 }
 
-
-
-h1{
-    color: green;
-    font-family: 'myfont';
-    font-size: 100px;
-    letter-spacing: 1px;
-}
-
 body{
     background-color: black;
     height: 1500px;
 }
+
+.tab{
+    display: flex;
+    justify-content:center ;
+}
+
+
+h1{
+    margin: 1 auto;
+    color: green;
+    font-family: 'myfont';
+    font-size: 90px;
+    letter-spacing: 1px;
+}
+
+.line{
+    border-color: green;
+}
+
+.sideTab{
+    float: right;
+    border: solid;
+    border-color: green;
+    border-width: 1px;
+}
+
+.container{
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 2;
+    justify-content: flex-start;
+}
+
