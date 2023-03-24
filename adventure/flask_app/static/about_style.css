@@ -1,0 +1,23 @@
+@font-face{
+    font-family: 'myfont';
+    src:url(fonts/AncientModernTales.ttf);
+}
+
+@font-face{
+    font-family: 'cpu';
+    src:url(fonts/DiaryOfAn8BitMage-lYDD.ttf);
+}
+
+
+
+h1{
+    color: green;
+    font-family: 'myfont';
+    font-size: 100px;
+    letter-spacing: 1px;
+}
+
+body{
+    background-color: black;
+    height: 1500px;
+}

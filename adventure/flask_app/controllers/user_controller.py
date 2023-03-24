@@ -72,6 +72,13 @@ def dashboard2():
     return render_template("reg_dashboard.html" ,user=User.get_user_by_id(session['user_id']))
 
 
+@app.route("/about")
+def about_page():
+    return render_template("abt.html")
+
+
+
+
 @app.route("/clear_session")
 def clear():
     session.clear()

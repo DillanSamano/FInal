@@ -14,6 +14,10 @@
 
 body{
     background-color: black;
+    background-image:url("img/backgroundcastle.png");
+    background-repeat: no-repeat;
+    background-size:600px;
+    background-position:  -150px 450px;
 }
 
 #register{
@@ -88,4 +92,20 @@ input:focus{
     border: black;
     text-decoration: none;
     letter-spacing: 3px;
+}
+
+#abt{
+    text-decoration: none;
+    font-size: xx-large;
+    font-family: 'myfont';
+    color: green;
+    margin: 0,auto;
+    position: relative;
+    bottom: 450px;
+    left: 20px;
+}
+
+#bak{
+
+ 
 }
