@@ -27,6 +27,13 @@ body{
     font-family: 'myfont';
 }
 
+.title{
+    background-image:url("img/dragonsprite.png");
+    background-repeat: no-repeat;
+    background-size:300px;
+    background-position: right ;
+}
+
 #con{
     width: 400px;
     height: 300px;
