@@ -1,0 +1,63 @@
+@font-face{
+    font-family: 'myfont';
+    src:url(fonts/AncientModernTales.ttf);
+}
+
+@font-face{
+    font-family: 'cpu';
+    src:url(fonts/DiaryOfAn8BitMage-lYDD.ttf);
+}
+
+h1{
+    font-family: 'myfont';
+    color: green;
+    font-size: 50px;
+}
+
+body{
+    background-color: black;
+}
+
+
+.container{
+    margin-left: 669px;
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-color: green;
+    border-width: 1px;
+    width: 450px;
+    height: 400px;
+}
+
+.asidde{
+    display: flex;
+    justify-content:space-evenly; 
+    margin-right: 50px;
+    font-family: 'myfont';
+    
+}
+
+.box{
+    background-color: black;
+    color: green;
+    border-color: green;
+    font-family: 'myfont';
+    font-size: 20px;
+}
+
+.button{
+    background-color: black;
+    border-color: green;
+    color: green;
+    margin-left: 155px;
+    width:50px;
+    margin-top: 30px;
+}
+
+.side{
+    color:green;
+    font-size: x-large;
+    margin-left: 20px;
+
+}

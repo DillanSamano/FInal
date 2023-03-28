@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+            <div style="float: right; font-size: medium;"  >
+                <a href="/home">Home</a>   |<a href="/new_painting"> add a new painting |  </a>  <a href="/clear_session">log out</a>
+            </div>
+            
+            <body>
+                <div style="display: grid; place-items: center; ">
+            {% for p in one_user.paintings%}
+                <h1>{{p.title}}</h1>
+                
+                    <p>added by : {{one_user.first_name}} </p>
+                    <p>description :{{p.description}} </p>
+                    <p>price $ : {{p.price}}</p>
+        {%endfor%}
+    </div>
+</body>
+</html>

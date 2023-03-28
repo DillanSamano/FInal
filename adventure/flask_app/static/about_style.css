@@ -32,11 +32,15 @@ h1{
 }
 
 .sideTab{
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     float: right;
     border: solid;
     border-color: green;
     border-width: 1px;
+    width: 4in;
+    height: 5in;
 }
 
 .container{
@@ -44,6 +48,38 @@ h1{
     display: flex;
     justify-content: flex-start;
     flex-grow: 2;
-    justify-content: flex-start;
+    flex-direction: column;
+
 }
+
+.post{
+    border-style: solid;
+    border-color: green;
+    width: 9in;
+    height: 2in;
+    font-size: 40px;
+    color: green;
+    font-family: 'myfont';
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.hr{
+    border-color: green;
+    width: 100%;
+    }
+
+.sdbut{
+    margin-left: 1.5in;
+    background-color: black;
+    border-color: green;
+    color:green;
+    font-family: 'myfont';
+    width: 1in;
+    font-size: xx-large;
+}
+.tab{
+    margin-left: 10px;
+}
+
 

@@ -14,15 +14,21 @@
     <hr class="line">
 <!-- start of the body -->
 <div class="sideTab">
-    <h1>sideTab</h1>
-    <a href="" class="tag">log out</a>
+    <h1 class="tab">sideTab</h1>
+    <hr class="hr">
+    <a href="" class="tag"><button class="sdbut">LOG OUT</button></a>
     <br>
-    <a href="" class="tag">back</a>
+    <a href="/dashboard" class="tag"><button class="sdbut">HOME</button></a>
     <br>
-    <a href="/add_topic" class="tag">add Topic </a>
+    <a href="/add_topic" class="tag"><button class="sdbut">ADD TOPIC </button></a>
 </div>
 <div class="container">
-    <h1>this is where the forum topics will go just </h1>
+    {% for p in all_posts%}
+    <ul>
+        <li><p class="post"><a href="/show_post/{{p.id}}" style="color: green;">{{p.content}} 
+        </a> </p></li>
+    </ul> 
+{%endfor%}
 </div>
 </body>
 </html>

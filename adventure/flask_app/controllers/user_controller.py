@@ -1,6 +1,7 @@
 from flask import render_template,redirect,request,flash,session
 from flask_app.models.user_model import User
 from flask_app.models.adventure_model import Adventure
+from flask_app.models.posts_model import Post
 
 from flask_app import app
 from flask_bcrypt import Bcrypt
@@ -74,7 +75,8 @@ def dashboard2():
 
 @app.route("/about")
 def about_page():
-    return render_template("abt.html")
+    all_posts = Post.get_all_with_creator()
+    return render_template("abt.html",one_user = User.get_user_by_id(session['user_id']), all_posts = all_posts)
 
 
 

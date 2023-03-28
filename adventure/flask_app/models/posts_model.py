@@ -4,7 +4,7 @@ from flask import flash
 import pprint
 import re
 
-db = "users_n_adventure"
+db = "user_n_adventure"
 
 class Post : 
     def __init__(self,data):
@@ -23,24 +23,25 @@ class Post :
 
     @classmethod
     def get_all_with_creator(cls):
-        query = "SELECT * FROM paintings LEFT JOIN users ON users.id = paintings.user_id "
+        query = "SELECT * FROM posts LEFT JOIN users ON users.id = posts.user_id  "
         results = connectToMySQL(db).query_db(query)
-        all_paintings = []
+        all_posts = []
         pprint.pprint(results)
         for p in results:
-            paint = cls(p)
+            posts = cls(p)
             user_data = {
                 'id': p['users.id'],
                 'first_name': p['first_name'],
                 'last_name' : p['last_name'],
+                'username' : p['username'],
                 'email' :  p['email'],
                 'password' : p['password'],
                 'created_at' : p['users.created_at'],
                 'updated_at' : p['users.updated_at']
             }
-            paint.creator = user_model.User(user_data)
-            all_paintings.append(paint)
-        return all_paintings
+            posts.creator = user_model.User(user_data)
+            all_posts.append(posts)
+        return all_posts
     
 
     @classmethod
@@ -63,11 +64,11 @@ class Post :
 
 
     @staticmethod
-    def post_validator(paintings):
+    def post_validator(posts):
         is_valid = True
 
-        if len(paintings['price']) < 0:
-                flash("price cannont be left blank")
+        if len(posts['content']) < 10:
+                flash(" cannont be left blank, must be 10 characters long atleast")
                 is_valid = False
 
 
