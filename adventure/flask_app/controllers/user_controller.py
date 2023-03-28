@@ -89,7 +89,9 @@ def clear():
 def game_over():
     return render_template("game_over.html", user=User.get_user_by_id(session['user_id']))
 
-
+@app.route("/add_topic")
+def add_topic():
+    return render_template('add_topic.html')
 
 
 
