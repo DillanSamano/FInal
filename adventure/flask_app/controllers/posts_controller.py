@@ -19,3 +19,10 @@ def create_topic():
     Post.save_post(data)
     return redirect("/about")
 
+@app.route("/show_post/<int:id>")
+def show_one_mag(id):
+    print(id)
+    data = {
+        'id' : id
+    }
+    return render_template("show.html", one_user = User.get_single_post(data))

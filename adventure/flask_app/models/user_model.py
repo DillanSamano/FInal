@@ -24,6 +24,23 @@ class User:
         self.adventure = []
         self.ad=[]
 
+    @classmethod
+    def get_single_post(cls,data):
+        query = "SELECT * FROM users left join posts ON posts.user_id = users.id where posts.id =%(id)s"
+        results = connectToMySQL(db).query_db(query,data)
+        pprint.pprint(results, sort_dicts=False)
+        user = cls(results[0])
+        for posts in results: 
+            posts_dictionary = {
+                'id': posts['posts.id'],
+                'content' : posts['content'],
+                'created_at' : posts['created_at'],
+                'updated_at' : posts['updated_at']
+            }
+            user.posts.append(User(posts_dictionary))
+        return user
+    
+
 
     @classmethod
     def get_single_adventure(cls,data):

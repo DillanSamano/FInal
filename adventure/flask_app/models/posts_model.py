@@ -44,6 +44,10 @@ class Post :
         return all_posts
     
 
+
+
+
+
     @classmethod
     def update_post(cls,data,id):
         query = f'''
