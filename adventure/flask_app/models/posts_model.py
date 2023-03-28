@@ -15,6 +15,8 @@ class Post :
         self.creator = None
 
 
+
+
     @classmethod
     def save_post(cls,data):
         query = 'INSERT INTO posts (user_id,content) VALUES ( %(id)s, %(content)s )'

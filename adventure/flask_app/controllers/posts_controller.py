@@ -2,6 +2,7 @@ from flask import render_template,redirect,request,flash ,session
 from flask_app.models.user_model import User
 from flask_app.models.posts_model import Post
 from flask_app.controllers.user_controller import User
+from flask_app.models.comment_model import Comments
 from flask_app import app
 
 
@@ -25,4 +26,4 @@ def show_one_mag(id):
     data = {
         'id' : id
     }
-    return render_template("show.html", one_user = User.get_single_post(data))
+    return render_template("show_post.html", one_user = User.get_single_post(data), comments = Comments.display_comments())

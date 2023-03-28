@@ -1,5 +1,7 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app.models.adventure_model import Adventure
+from flask_app.models.posts_model import Post
+
 import pprint
 from flask import flash
 import re 
@@ -21,30 +23,31 @@ class User:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.posts = []
-        self.adventure = []
-        self.ad=[]
+        # self.adventure = []
+        # self.ad=[]
+
 
     @classmethod
     def get_single_post(cls,data):
-        query = "SELECT * FROM users left join posts ON posts.user_id = users.id where posts.id =%(id)s"
+        query = "SELECT * FROM posts join users ON posts.user_id = users.id where posts.id =%(id)s"
         results = connectToMySQL(db).query_db(query,data)
         pprint.pprint(results, sort_dicts=False)
         user = cls(results[0])
         for posts in results: 
             posts_dictionary = {
-                'id': posts['posts.id'],
+                'id': posts['id'],
                 'content' : posts['content'],
                 'created_at' : posts['created_at'],
                 'updated_at' : posts['updated_at']
             }
-            user.posts.append(User(posts_dictionary))
+            user.posts.append(Post(posts_dictionary))
         return user
     
 
 
     @classmethod
     def get_single_adventure(cls,data):
-        query = "SELECT * FROM adventure left join users ON adventure.user_id = users.id where user_id=  %(id)s"
+        query = "SELECT * FROM posts join users ON posts.user_id = users.id where posts.id = %(id)s"
         results = connectToMySQL(db).query_db(query,data)
         pprint.pprint(results, sort_dicts=False)
         user = cls(results[0])

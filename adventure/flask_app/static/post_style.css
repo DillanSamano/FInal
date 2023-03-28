@@ -1,0 +1,51 @@
+@font-face{
+    font-family: 'myfont';
+    src:url(fonts/AncientModernTales.ttf);
+}
+
+@font-face{
+    font-family: 'cpu';
+    src:url(fonts/DiaryOfAn8BitMage-lYDD.ttf);
+}
+
+body{
+    background-color: black;
+    height: 1500px;
+}
+
+
+.container{
+    margin-top: 20px;
+    width: 9in;
+    height: 4in;
+    border-style: solid;
+    border-color: green;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+#title{
+    text-align: center;
+    color: green;
+    font-family: 'myfont';
+    font-size: xx-large;
+    word-spacing: 2px;
+}
+
+#name{
+    color: green;
+    text-align: center;
+    font-family: 'myfont';
+    font-size: x-large;
+}
+
+#line{
+    border-style: solid;
+    border-color: green;
+    width: 100%;
+}
+
+.comment{
+    color: green;
+}
