@@ -80,7 +80,7 @@ body{
     white-space: nowrap;
     overflow: hidden;
     animation: 
-        typing 2s steps(45),
+        typing 2s steps(35),
         cursor .4s step-end infinite alternate;
 }
 

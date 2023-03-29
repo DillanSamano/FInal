@@ -14,7 +14,7 @@
         <div id="top">
             <div class="card">
                 <h1 class="name">Wizard</h1>
-                <img src="" alt="" class="chara_img">
+                <img src="static/img/wizard.png" alt="picture of a wizard holding a magic staff" class="wizard">
                 <p class="desc">Wizard, comes with a wand and extemely cool hat</p>
                     <form action="/create_adventure" method="post">
                     <input type="hidden" name="character" value="wizard">
@@ -33,12 +33,16 @@
         <div id="top">
             <div class="card">
                 <h1 class="name">Swordman</h1>
-                <img src="" alt="" class="chara_img">
+                <img src="static/img/knight.png" alt="archered" class="wizard">
                 <p class="desc">Swordmen a noble hero, equiped with awesome hair and a long sword </p>
-                <button class="bt">
-                    <a href="/home#game" class="SeLect">
-                        <input type="hidden" name="health" >Select</a>
-                    </button>
+                <form action="/create_adventure" method="post">
+                    <input type="hidden" name="character" value="SWOARDMAN">
+                    <input type="hidden" name="page" value="home">
+                    <input type="hidden" name="inventory" value = "0">
+                    <input type="hidden" name="health" value="100">
+                    <div class="bt">
+                        <button class="SeLect"> Select</button>
+                    </div>
             </div>
         </div>
 <!-- END OF THE CARD -->
@@ -47,12 +51,16 @@
         <div id="top">
             <div class="card">
                 <h1 class="name">Cleric</h1>
-                <img src="" alt="" class="chara_img">
+                <img src="static/img/cleric.png" alt="cleric" class="cleric">
                 <p class="desc">A Reglious leader,capable in combat and skilled in the use of divine magic.  </p>
-                <button class="bt">
-                    <a href="/home#game" class="SeLect">
-                        <input type="hidden" name="health" >Select</a>
-                    </button>
+                    <form action="/create_adventure" method="post">
+                        <input type="hidden" name="character" value="cleric">
+                        <input type="hidden" name="page" value="home">
+                        <input type="hidden" name="inventory" value = "0">
+                        <input type="hidden" name="health" value="100">
+                        <div class="bt">
+                            <button class="SeLect"> Select</button>
+                        </div>
             </div>
         </div>
 <!-- END OF CARD -->
@@ -61,12 +69,16 @@
         <div id="bottom">
             <div class="card">
                 <h1 class="name">Thief</h1>
-                <img src="" alt="" class="chara_img">
+                <img src="static/img/thief.png" alt="archered" class="">
                 <p class="desc">This is a example, sneaky combat and the skill of stealth </p>
-                <button class="bt">
-                    <a href="/home#game" class="SeLect">
-                        <input type="hidden" name="health" >Select</a>
-                    </button>
+                <form action="/create_adventure" method="post">
+                    <input type="hidden" name="character" value="Thief">
+                    <input type="hidden" name="page" value="home">
+                    <input type="hidden" name="inventory" value = "0">
+                    <input type="hidden" name="health" value="100">
+                    <div class="bt">
+                        <button class="SeLect"> Select</button>
+                    </div>
             </div>
         </div>
 <!-- END OF CARD -->
@@ -75,12 +87,16 @@
         <div id="bottom">
             <div class="card">
                 <h1 class="name">Archered</h1>
-                <img src="" alt="" class="chara_img">
+                <img src="static/img/archered.png" alt="archered" class="wizard">
                 <p class="desc">Archers are masters of ranged combat, perfered to take down target from afar </p>
-                <button class="bt">
-                    <a href="/home#game" class="SeLect">
-                        <input type="hidden" name="health" >Select</a>
-                    </button>
+                <form action="/create_adventure" method="post">
+                    <input type="hidden" name="character" value="Archered">
+                    <input type="hidden" name="page" value="home">
+                    <input type="hidden" name="inventory" value = "0">
+                    <input type="hidden" name="health" value="100">
+                    <div class="bt">
+                        <button class="SeLect"> Select</button>
+                    </div>
             </div>
         </div>
 <!-- END OF  CARD -->

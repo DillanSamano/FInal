@@ -26,6 +26,7 @@ body{
 }
 
 #title{
+    margin-top: 1.5in;
     text-align: center;
     color: green;
     font-family: 'myfont';
@@ -40,12 +41,67 @@ body{
     font-size: x-large;
 }
 
-#line{
+#comment_border{
     border-style: solid;
     border-color: green;
-    width: 100%;
+    border-width: 1px;
+    width: 50%;
+    height: 2in;
 }
 
 .comment{
+    font-size: x-large;
+    font-family: 'myfont';
+    text-align: center;
     color: green;
 }
+
+.name{
+    font-size: x-large;
+    font-family: 'myfont';
+    text-align: center;
+    color: green;
+}
+
+#postacomment{
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-color: green;
+    border-width: 1px;
+    width: 50%;
+    height: 2in;
+}
+
+.txt{
+    font-size: x-large;
+    font-family: 'myfont';
+    color: green;
+}
+
+.box{
+    font-family: 'myfont';
+    color: green;
+    height: 50px;
+    width: 500px;
+    margin-top: 1in;
+    background-color: black;
+    border-color: green;
+
+}
+
+.button{
+    font-size: x-large;
+    font-family: 'myfont';
+    background-color: black;
+    color: green;
+    border-color: green;
+}
+
+.side{
+    color: green;
+    font-size: xx-large;
+    font-family: 'myfont';
+    
+}
+

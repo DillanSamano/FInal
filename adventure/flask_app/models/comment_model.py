@@ -18,7 +18,7 @@ class Comments :
 
     @classmethod
     def save_comment(cls,data):
-        query = ' INSERT INTO comments (users_id,post_id,comment) VALUES (%(users_id)s,%(post_id)s,%(comment)s)'
+        query = 'INSERT INTO comments (users_id,post_id,comment) VALUES (%(users_id)s,%(post_id)s,%(comment)s)'
         return connectToMySQL(db).query_db(query,data)
     
 
@@ -27,28 +27,32 @@ class Comments :
     def display_comments(cls):
         query = '''SELECT * FROM posts 
             LEFT JOIN comments ON comments.post_id = posts.id
-            LEFT JOIN users ON comments.users_id = users_id;'''
+            LEFT JOIN users ON comments.users_id = users.id;'''
         results = connectToMySQL(db).query_db(query)
         all_comments = []
         for row_in_db in results:
-            # comment = cls(row_in_db)
-            user_data = {
-            'id' : row_in_db['users.id'],
-            'first_name' : row_in_db['first_name'],
-            'last_name' : row_in_db['last_name'],
-            'username' :row_in_db['username'],
-            'email' : row_in_db['email'],
-            'password' : row_in_db['password'],
-            'created_at' :row_in_db['users.created_at'],
-            'updated_at' : row_in_db['users.updated_at'],
-            }
             comment_data={
             'users_id' : row_in_db['users_id'],
             'post_id' : row_in_db['post_id'],
             'comment' : row_in_db['comment'],
             'created_at' : row_in_db['created_at'],
             'updated_at' : row_in_db['updated_at'],
-            'poster' : User(user_data),
             }
-            all_comments.append(cls(comment_data))
+            user_data = {
+            'id' : row_in_db['users.id'],
+            'first_name' : row_in_db['first_name'],
+            'last_name' : row_in_db['last_name'],   
+            'username' :row_in_db['username'],
+            'email' : row_in_db['email'],
+            'password' : row_in_db['password'],
+            'created_at' :row_in_db['users.created_at'],
+            'updated_at' : row_in_db['users.updated_at'],
+            }
+            comment = cls(comment_data)
+            comment.poster = User(user_data)
+            all_comments.append(comment)
         return all_comments
+    
+
+
+    

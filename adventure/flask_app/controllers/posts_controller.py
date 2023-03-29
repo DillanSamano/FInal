@@ -26,4 +26,5 @@ def show_one_mag(id):
     data = {
         'id' : id
     }
-    return render_template("show_post.html", one_user = User.get_single_post(data), comments = Comments.display_comments())
+    comments = Comments.display_comments()
+    return render_template("show_post.html", one_user = User.get_single_post(data), comments = comments)

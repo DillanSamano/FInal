@@ -80,7 +80,6 @@ def about_page():
 
 
 
-
 @app.route("/clear_session")
 def clear():
     session.clear()
@@ -100,25 +99,81 @@ def add_topic():
 
 @app.route("/home")
 def home():
-    # if 'health' not in session:
-    #     session['health'] = 100
-    if 'user_id' not in session:
-        return redirect("/")
-    return render_template("1.html",user=User.get_user_by_id(session['user_id']),)
+        if session['health'] < 100:
+            session['health'] += 100
+        return render_template("1.html",user=User.get_user_by_id(session['user_id']),)
 
-@app.route("/run")
+@app.route("/yes")
 def run():
-    return render_template("3.html", user=User.get_user_by_id(session['user_id']))
+    return render_template("2.html", user=User.get_user_by_id(session['user_id']))
 
-@app.route("/town")
-def town():
+@app.route("/explain")
+def explain():
+    return render_template("2.5.html", user=User.get_user_by_id(session['user_id']))
+
+@app.route("/explain/for_dummies")
+def dum():
+    return render_template("2.6.html", user=User.get_user_by_id(session['user_id']))
+
+@app.route("/explain/for_dummies/explain_more!!")
+def dumdum():
+        session['health'] -= 5
+        return render_template("2.7.html", user=User.get_user_by_id(session['user_id']))
+
+@app.route("/ok")
+def gotIt():
+    return render_template('3.html',user=User.get_user_by_id(session['user_id']))
+
+
+@app.route("/city")
+def city():
+    return render_template('3.5.html',user=User.get_user_by_id(session['user_id']))
+
+@app.route("/accept")
+def accept_milk():
+    return render_template('3.6.html',user=User.get_user_by_id(session['user_id']))
+
+@app.route("/decline")
+def Decline_milk():
+    return render_template('3.7.html',user=User.get_user_by_id(session['user_id']))
+
+
+@app.route("/Explore")
+def exp():
     return render_template('4.html',user=User.get_user_by_id(session['user_id']))
 
-@app.route("/fight")
-def fight():
-    session['health'] -= 10
+
+@app.route("/right")
+def right():
+    session['health'] -= 100
+    return render_template('5.html',user=User.get_user_by_id(session['user_id']))
+
+
+
+@app.route("/acceptance")
+def accept():
     if session['health'] > 10:
         True
     elif session['health'] < 10 :
         return redirect('/Game_over')
-    return render_template("2.html", user=User.get_user_by_id(session['user_id']))
+    return render_template('6.html',user=User.get_user_by_id(session['user_id']))
+
+
+
+# @app.route("/fight")
+# def fight():
+#     session['health'] -= 20
+#     if session['health'] > 10:
+#         True
+#     elif session['health'] < 10 :
+#         return redirect('/Game_over')
+#     return render_template('6.html',user=User.get_user_by_id(session['user_id']))
+
+# @app.route("/fight")
+# def ():
+#     session['health'] -= 10
+#     if session['health'] > 10:
+#         True
+#     elif session['health'] < 10 :
+#         return redirect('/Game_over')
+#     return render_template("2.html", user=User.get_user_by_id(session['user_id']))

@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='post_style.css') }}" >
     <title>Document</title>
 </head>
-            <div style="float: right; font-size: medium;"  >
-                <a href="/home">Home</a>   |<a href="/new_painting"> add a new painting |  </a>  <a href="/clear_session">log out</a>
+            <div style="float: right; font-size: medium;"  class="tab">
+                <a href="/dashboard" class="side">Home</a>   <a href="/about" class="side"> back|  </a>  <a href="/clear_session" class="side">log out</a>
             </div>
             
             <body>
@@ -17,20 +17,20 @@
             <div class="container">
                 <h1 id="title">{{p.content}}</h1>
                 <p id="name">added by : {{one_user.first_name}} </p>
-                <hr id="line">
-
+                    </div>
                 {%for comment in comments%}
                 {%if comment.post_id == p.id%}
-                <hr>
-                <p class="comment">{{comment.poster.first_name}}{{comment.poster.last_name}}</p>
+                <div id="comment_border">
+                <p class="name">{{comment.poster.first_name}} {{comment.poster.last_name}} :</p>
                 <p class="comment">{{comment.comment}}</p>
+                    </div>
                 {%endif%}
                 {%endfor%}
-                
+                <div id="postacomment">
                 <form action="/save_comments/{{p.id}}" method="post">
-                    <label for="comments">Post a Comment</label>
-                    <input type="text" name="comment">
-                    <button>comment</button>
+                    <label for="comments" class="txt">Post a Comment</label>
+                    <input type="text" name="comment"  class="box">
+                    <button class="button">comment</button>
                 </form>
                 </div>
 {%endfor%}
