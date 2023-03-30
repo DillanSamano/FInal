@@ -131,16 +131,22 @@ def city():
 
 @app.route("/accept")
 def accept_milk():
-    return render_template('3.6.html',user=User.get_user_by_id(session['user_id']))
+    session['health'] += 5 
+    return render_template('accept.html',user=User.get_user_by_id(session['user_id']))
 
-@app.route("/decline")
-def Decline_milk():
-    return render_template('3.7.html',user=User.get_user_by_id(session['user_id']))
 
+
+@app.route("/intoTheCity")
+def intoTheCity():
+    return render_template('intoTheCity.html',user=User.get_user_by_id(session['user_id']))
 
 @app.route("/Explore")
 def exp():
     return render_template('4.html',user=User.get_user_by_id(session['user_id']))
+
+@app.route("/END/DEMO")
+def demo():
+    return render_template('END.html',user=User.get_user_by_id(session['user_id']))
 
 
 @app.route("/right")

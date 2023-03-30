@@ -28,3 +28,25 @@ def show_one_mag(id):
     }
     comments = Comments.display_comments()
     return render_template("show_post.html", one_user = User.get_single_post(data), comments = comments)
+
+
+
+
+@app.route("/edit_post/<int:id>")
+def show_user_edit(id):
+    print(id)
+    data = {
+        'id' : id
+    }
+    return render_template("update_post.html", one_user = User.get_single_post(data))
+
+
+@app.route("/update_post/<int:id>", methods = ['post'])
+def updateD_post(id):
+    Post.update_post(request.form,id)
+    return redirect("/about")
+
+@app.route("/delete/<int:id>")
+def delete_user_post(id):
+    Post.delete_post(id)
+    return redirect("/about")

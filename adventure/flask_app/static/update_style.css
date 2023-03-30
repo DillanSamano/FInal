@@ -1,0 +1,39 @@
+@font-face{
+    font-family: 'myfont';
+    src:url(fonts/AncientModernTales.ttf);
+}
+
+@font-face{
+    font-family: 'cpu';
+    src:url(fonts/DiaryOfAn8BitMage-lYDD.ttf);
+}
+
+body{
+    background-color: black;
+    height: 1500px;
+}
+
+h1{
+    color: green;
+}
+
+.container{
+    margin-top: 20px;
+    margin: auto;
+    width: 50%;
+    width: 9in;
+    height: 4in;
+    border-style: solid;
+    border-color: green;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    color: green;
+}
+
+.des{
+    color: green;
+}
