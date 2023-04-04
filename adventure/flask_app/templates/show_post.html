@@ -19,6 +19,8 @@
                 <h1 id="title">{{p.content}}</h1>
                 <p id="name">added by : {{one_user.first_name}} </p>
                     </div>
+                    
+                <button onclick="myFunction()">Click Me</button>
                 {%for comment in comments%}
                 {%if comment.post_id == p.id%}
                 <div id="comment_border">
@@ -37,5 +39,5 @@
 {%endfor%}
 
     </div>
-</body>
+</body><script src="javscript/file.js"></script>
 </html>

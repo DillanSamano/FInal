@@ -1,6 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask_app.models import user_model
-from flask_app.controllers import likes_controller 
+# from flask_app.models import user_model
+# from flask_app.controllers import likes_controller 
 from flask import flash
 import pprint
 
