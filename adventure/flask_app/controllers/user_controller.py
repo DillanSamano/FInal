@@ -75,6 +75,8 @@ def dashboard2():
 
 @app.route("/about")
 def about_page():
+    if 'user_id' not in session:
+        return redirect("/")
     all_posts = Post.get_all_with_creator()
     return render_template("abt.html",one_user = User.get_user_by_id(session['user_id']), all_posts = all_posts)
 
@@ -88,10 +90,14 @@ def clear():
 
 @app.route('/Game_over')
 def game_over():
+    if 'user_id' not in session:
+        return redirect("/")
     return render_template("game_over.html", user=User.get_user_by_id(session['user_id']))
 
 @app.route("/add_topic")
 def add_topic():
+    if 'user_id' not in session:
+        return redirect("/")
     return render_template('add_topic.html')
 
 
@@ -99,7 +105,7 @@ def add_topic():
 
 @app.route("/home")
 def home():
-        if session['health'] < 100:
+        if session['health'] < 0:
             session['health'] += 100
         return render_template("1.html",user=User.get_user_by_id(session['user_id']),)
 
@@ -153,6 +159,7 @@ def demo():
 def right():
     session['health'] -= 100
     return render_template('5.html',user=User.get_user_by_id(session['user_id']))
+
 
 
 

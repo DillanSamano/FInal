@@ -16,3 +16,5 @@ def save_comment(post_id):
     }
     Comments.save_comment(data)
     return redirect("/about")
+
+
