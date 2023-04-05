@@ -20,15 +20,20 @@
                 <p id="name">added by : {{one_user.first_name}} </p>
                     </div>
                     
-                <button onclick="myFunction()">Click Me</button>
                 {%for comment in comments%}
                 {%if comment.post_id == p.id%}
+                <br>
                 <div id="comment_border">
                 <p class="name">{{comment.poster.first_name}} {{comment.poster.last_name}} :</p>
                 <p class="comment">{{comment.comment}}</p>
-                    </div>
+                <form action="/save_likes/{{p.id}}" method="post">
+                    <label for="likes" style="color: green;"><button class="likes">Like</button> {{comment.likes}}</label> 
+                    <input type="hidden" name="likes" value="1">
+                </form>
+                </div>
                 {%endif%}
                 {%endfor%}
+                <br>
                 <div id="postacomment">
                 <form action="/save_comments/{{p.id}}" method="post">
                     <label for="comments" class="txt">Post a Comment</label>
@@ -38,6 +43,7 @@
                 </div>
 {%endfor%}
 
-    </div>
-</body><script src="javscript/file.js"></script>
+    </div>    
+
+</body>
 </html>

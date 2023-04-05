@@ -8,7 +8,7 @@ db = "user_n_adventure"
 
 class Likes: 
     def __init__(self,data):
-        self.content = data['likes']
+        self.Likes = data['likes']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.id = data['id']
@@ -18,9 +18,9 @@ class Likes:
 
     @classmethod
     def save_like(cls,data):
-        query = 'INSERT INTO posts (user_id,likes) VALUES ( %(id)s, %(likes)s )'
+        query = 'INSERT INTO comments (users_id,post_id,likes) VALUES (%(users_id)s,%(post_id)s,%(likes)s)'
         return connectToMySQL(db).query_db(query,data) 
-    
+
 
     @classmethod
     def update_post(cls,data,id):

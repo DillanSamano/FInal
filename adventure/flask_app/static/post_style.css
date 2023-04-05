@@ -105,3 +105,8 @@ body{
     
 }
 
+.likes{
+    color: green;
+    font-family: 'myfont';
+    font-size: larger;
+}

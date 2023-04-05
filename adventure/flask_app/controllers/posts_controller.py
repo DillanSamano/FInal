@@ -4,6 +4,7 @@ from flask_app.models.posts_model import Post
 from flask_app.controllers.user_controller import User
 from flask_app.models.comment_model import Comments
 from flask_app import app
+import js2py
 
 
 
@@ -50,3 +51,5 @@ def updateD_post(id):
 def delete_user_post(id):
     Post.delete_post(id)
     return redirect("/about")
+
+
