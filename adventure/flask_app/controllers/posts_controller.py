@@ -28,8 +28,9 @@ def show_one_mag(id):
     data = {
         'id' : id
     }
+    
     comments = Comments.display_comments()
-    return render_template("show_post.html", one_user = User.get_single_post(data), comments = comments,    postlike = PostLikes.get_post_likes(data))
+    return render_template("show_post.html", one_user = User.get_single_post(data), comments = comments, Num_of_likes = PostLikes.get_post_likes(data) )
 
 
 

@@ -19,10 +19,8 @@
                 <h1 id="title">{{p.content}}</h1>
                 <p id="name">added by : {{one_user.first_name}} </p>
                 <form action="/save_post_likes/{{p.id}}" method="post">
-                    {%for p in postlike.postlike%}
-                    {% if p.id == p.id %}
-                    <h1 style="color: green;"> {{p.id}} </h1>
-                    {%endif%}
+                    {%for like in  Num_of_likes%}
+                    <h1 style="color: green;"> {{like}} </h1>
                     {%endfor%}
                     <label for="likes" style="color: green;"><button class="likes">Like</button> </label> 
                     <input type="hidden" name="likes" value="1">

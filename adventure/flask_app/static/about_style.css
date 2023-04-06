@@ -11,6 +11,7 @@
 body{
     background-color: black;
     height: 1500px;
+    background-image:url("img/stars.gif");
 }
 
 .tab{

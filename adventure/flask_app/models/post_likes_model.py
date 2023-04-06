@@ -8,9 +8,6 @@ db = "user_n_adventure"
 
 class PostLikes: 
     def __init__(self,data):
-        # self.post_id = data['post_id']
-        self.created_at = data['created_at']
-        self.updated_at = data['updated_at']
         self.id = data['id']
         self.creator = None
         self.postlike = []
@@ -36,7 +33,7 @@ class PostLikes:
 
     @classmethod
     def get_post_likes(cls,data):
-        query = "SELECT * FROM post_likes join posts ON posts_id = posts.id where posts.id = %(id)s"
+        query = "SELECT * FROM post_likes join posts ON posts_id = posts.id where posts.id =%(id)s"
         results = connectToMySQL(db).query_db(query,data)
         pprint.pprint(results, sort_dicts=False)
         likes = cls(results[0])
@@ -44,9 +41,7 @@ class PostLikes:
             postlike_dictionary = {
                 'id': postlike['id'],
                 # 'post_id': postlike['post_id'],
-                'content' : postlike['content'],
-                'created_at' : postlike['created_at'],
-                'updated_at' : postlike['updated_at']
+                # 'comments_id' : postlike['comment_id'],
             }
             likes.postlike.append(PostLikes(postlike_dictionary))
         return likes
