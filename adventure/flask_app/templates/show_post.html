@@ -18,6 +18,14 @@
             <div class="container">
                 <h1 id="title">{{p.content}}</h1>
                 <p id="name">added by : {{one_user.first_name}} </p>
+                <form action="/save_post_likes/{{p.id}}" method="post">
+                    {%for p in postlike.postlike%}
+                    {% if p.id == p.id %}
+                    <h1 style="color: green;"> {{p.id}} </h1>
+                    {%endif%}
+                    {%endfor%}
+                    <label for="likes" style="color: green;"><button class="likes">Like</button> </label> 
+                    <input type="hidden" name="likes" value="1">
                     </div>
                     
                 {%for comment in comments%}
@@ -26,10 +34,10 @@
                 <div id="comment_border">
                 <p class="name">{{comment.poster.first_name}} {{comment.poster.last_name}} :</p>
                 <p class="comment">{{comment.comment}}</p>
-                <form action="/save_likes/{{p.id}}" method="post">
+                <!-- <form action="/save_likes" method="post">
                     <label for="likes" style="color: green;"><button class="likes">Like</button> {{comment.likes}}</label> 
                     <input type="hidden" name="likes" value="1">
-                </form>
+                <!-- </form> -->
                 </div>
                 {%endif%}
                 {%endfor%}

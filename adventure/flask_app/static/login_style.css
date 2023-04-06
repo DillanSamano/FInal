@@ -8,6 +8,22 @@
     src:url(fonts/DiaryOfAn8BitMage-lYDD.ttf);
 }
 
+.left_dragon_eye{
+    position: absolute;
+    right: 500px;
+    top: -10px;
+}
+.right_dragon_eye{
+    position: absolute;
+    left: 500px;
+    top: -30px;
+}
+.nose{
+    position: absolute;
+    left: 780px;
+    bottom: 450px;
+}
+
 #login{
     font-size: 80px;
     color: green;

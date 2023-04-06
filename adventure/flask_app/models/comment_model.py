@@ -11,7 +11,6 @@ class Comments :
         self.users_id = data['users_id']
         self.post_id = data['post_id']
         self.comment = data['comment']
-        self.likes = data['likes']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.creator = None
@@ -25,7 +24,7 @@ class Comments :
     
 
 
- 
+
 
 
     @classmethod
@@ -41,7 +40,6 @@ class Comments :
             'post_id' : row_in_db['post_id'],
             'id' : row_in_db['id'],
             'comment' : row_in_db['comment'],
-            'likes' : row_in_db['likes'],
             'created_at' : row_in_db['created_at'],
             'updated_at' : row_in_db['updated_at'],
             }

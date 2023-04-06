@@ -3,6 +3,7 @@ from flask_app.models.user_model import User
 from flask_app.models.posts_model import Post
 from flask_app.controllers.user_controller import User
 from flask_app.models.comment_model import Comments
+from flask_app.controllers.post_likes_controller import PostLikes
 from flask_app import app
 import js2py
 
@@ -28,7 +29,7 @@ def show_one_mag(id):
         'id' : id
     }
     comments = Comments.display_comments()
-    return render_template("show_post.html", one_user = User.get_single_post(data), comments = comments)
+    return render_template("show_post.html", one_user = User.get_single_post(data), comments = comments,    postlike = PostLikes.get_post_likes(data))
 
 
 

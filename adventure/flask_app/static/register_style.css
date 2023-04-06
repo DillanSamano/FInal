@@ -14,17 +14,33 @@
 
 body{
     background-color: black;
-    background-image:url("img/backgroundcastle.png");
-    background-repeat: no-repeat;
-    background-size:600px;
-    background-position:  -150px 450px;
+    background-image:url("img/stars.png");
+    background-repeat: repeat;
+    background-size:200px;
+
 }
 
+
+
+.stars{
+    position: absolute;
+    left: -150px;
+    bottom: -20px;
+}
+.titl2{
+    /* background-image:url("img/right_dragon_eye.png");
+    background-repeat: no-repeat;
+    background-size:600px;
+    background-position: ; */
+
+}
 #register{
     word-wrap: break-word;
     font-size: 80px;
     color: green;
     font-family: 'myfont';
+    /* background-image:url("img/stars.png"); */
+
 }
 
 
@@ -37,6 +53,9 @@ body{
     border-width: 2px;
     margin: 20px auto;
     position: relative;
+    /* background-image:url("img/stars.png"); */
+    background-repeat: repeat;
+    
 }
 
 #reg{
